@@ -42,14 +42,14 @@ http://www.gmibank.com/api/tp-customers/43703
         expectedData.put("city","St Louis");
         expectedData.put("ssn","108-53-6655");
 
-        //3 Request ve Response
+        //3 Request ve Response.
         Response response=given()
                 .spec(spec03)
                 .header("Authorization","Bearer "+generateToken())
                 .when()
                 .get("/{bir}/{iki}");
         Map<String,Object> actualData=response.as(HashMap.class);
-        //4 Dogrulama
+        //4 Dogrulama.
         //4.1 Deserialization
         assertEquals(expectedData.get("firstName"),actualData.get("firstName"));
         assertEquals(expectedData.get("lastName"),actualData.get("lastName"));
@@ -69,7 +69,6 @@ http://www.gmibank.com/api/tp-customers/43703
         response.then().assertThat().body("ssn",equalTo("108-53-6655"));
 
         //4.3 Json
-
         JsonPath json=response.jsonPath();
         assertEquals("Alda",json.getString("firstName"));
         assertEquals("Monahan",json.getString("lastName"));

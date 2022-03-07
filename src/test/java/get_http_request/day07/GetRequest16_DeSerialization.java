@@ -26,7 +26,7 @@ public class GetRequest16_DeSerialization extends JsonPlaceHolderBaseUrl {
     public void test16(){
         //1)URL olusturma
         spec04.pathParams("bir","todos","iki",7);
-        //Expected data oluştur
+        //2) Expected data oluştur
         Map<String,Object> expectedData=new HashMap<>();
         expectedData.put("userId",1);
         expectedData.put("id",7);
