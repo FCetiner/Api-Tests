@@ -3,15 +3,13 @@ package get_http_request.day05;
 import base_url.ReqresinBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.apache.groovy.json.internal.ReaderCharacterSource;
-import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
-public class GetRequest07 extends ReqresinBaseUrl {
+public class GetRequest07_BaseUrl extends ReqresinBaseUrl {
     /*
     https://reqres.in/api/users URL request olustur.
     body icerisindeki idsi 5 olan datayi
