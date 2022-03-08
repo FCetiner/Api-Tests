@@ -11,7 +11,7 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
-public class GetRequest19 extends DummyBaseUrl {
+public class GetRequest19_Groovy extends DummyBaseUrl {
 /*
 http://dummy.restapiexample.com/api/v1/employees
 1) Status kodunun 200,
@@ -48,8 +48,9 @@ http://dummy.restapiexample.com/api/v1/employees
         assertEquals((Integer)23,yasList.get(yasList.size()-1));
         //assertTrue(yasList.get(yasList.size()-1)==23);
         //4) Maası 350000 den büyük olan tüm employee name'leri ekrana yazdırın ve bunların içerisinde "Charde Marshall" olduğunu test edin
-        List<Integer> maasList=json.getList("data.employee_salary.findAll{it>350000}");
-        assertFalse(maasList.contains("Charde Marshall"));
+        List<Integer> maasList=json.getList("data.findAll{it.employee_salary>350000}.employee_name");
+        System.out.println(maasList);
+        assertTrue(maasList.contains("Charde Marshall"));
     }
 
 }
