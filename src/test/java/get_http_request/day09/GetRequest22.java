@@ -45,7 +45,8 @@ https://restful-booker.herokuapp.com/booking/47
                 ,"lastname",equalTo(expectedData.get("lastname"))
                 ,"totalprice",equalTo(expectedData.get("totalprice"))
                 ,"depositpaid",equalTo(expectedData.get("depositpaid"))
-                ,"bookingdates",equalTo(expectedData.get("bookingdates")));
+                ,"bookingdates.checkin",equalTo(expectedData.get("bookingdates.checkin"))
+                ,"bookingdates.checkout",equalTo(expectedData.get("bookingdates.checkout")));
         //2 json
         JsonPath json=response.jsonPath();
         assertEquals(expectedData.get("firstname"),json.getString("firstname"));
