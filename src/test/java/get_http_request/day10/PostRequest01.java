@@ -2,12 +2,14 @@ package get_http_request.day10;
 
 import base_url.HerOkuAppBaseUrl;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.Test;
 import test_data.HerOkuAppTestData;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class PostRequest01 extends HerOkuAppBaseUrl {
      /*
@@ -52,9 +54,27 @@ olduğunu test edin
                 .auth()
                 .basic("admin","password123")
                 .spec(spec05)
-                .body(expectedRequestData.toString())
+                .body(expectedRequestData.toString())       //JsonObject'te toString() kullanmaliyiz. yoksa tanimaz
                 .when()
                 .post("/{parametre1}");
         response.prettyPrint();
+
+        //4 Dogrulama
+        //JsonPath
+        JsonPath json=response.jsonPath();
+        response.then().assertThat().statusCode(200);
+        //expectedRequestData.getString("firstname") -> test data icerisindeki firstname
+        //json.getString("booking.firstname") -> body deki firstname
+        assertEquals(expectedRequestData.getString("firstname"),json.getString("booking.firstname"));
+        assertEquals(expectedRequestData.getString("lastname"),json.getString("booking.lastname"));
+        assertEquals(expectedRequestData.getInt("totalprice"),json.getInt("booking.totalprice"));
+        assertEquals(expectedRequestData.getBoolean("depositpaid"),json.getBoolean("booking.depositpaid"));
+        assertEquals(expectedRequestData.getJSONObject("bookingdates").getString("checkin")
+                ,json.getString("booking.bookingdates.checkin"));
+        assertEquals(expectedRequestData.getJSONObject("bookingdates").getString("checkout")
+                ,json.getString("booking.bookingdates.checkout"));
+
+
+
     }
 }

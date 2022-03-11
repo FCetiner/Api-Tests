@@ -14,7 +14,8 @@ public class GetRequest02 {
     public void test02(){
         String url="https://reqres.in/api/users";
         Response response=given().when().get(url);
-
+        //given().when().get(url); -> request
+        //Response response -> response
         response.prettyPrint();       //response'daki body'i getirir
     //    response.prettyPeek();  //response daki her seyi getirir  prettyprinte gore daha cok islem yapma imkanimiz var
     //    response.then().log().all();    //response daki her seyi getirir
@@ -36,6 +37,7 @@ public class GetRequest02 {
                 ,"data[1].last_name",equalTo("Weaver")
                 ,"data[1].avatar",equalTo("https://reqres.in/img/faces/2-image.jpg"));
 
-
+        response.then().assertThat().body("data[5].id",equalTo(6)
+                                    ,"data[5].email",equalTo("tracey.ramos@reqres.in"));
     }
 }

@@ -53,4 +53,24 @@ Sondan 3. çalışanın maaşının 675000 olduğunu
 
         return expectedData;
     }
+
+
+    //Request olarak gonderdigimiz kisim
+    public HashMap<String,Object> setupRequestBody(){
+        HashMap<String,Object>requestBody =new HashMap<>();
+        requestBody .put("name","Ferhat Can");
+        requestBody .put("salary","2000");
+        requestBody .put("age","40");
+       return requestBody ;
+    }
+
+
+    //Cevap olacak gelecek kisim
+    public HashMap<String,Object>setupExpectedData(){
+        HashMap<String,Object>expectedData=new HashMap<>();
+        expectedData.put("statusCode",200);
+        expectedData.put("status","success");
+        expectedData.put("message","Successfully! Record has been added.");
+        return expectedData;
+    }
 }

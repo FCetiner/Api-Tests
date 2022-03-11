@@ -25,6 +25,5 @@ public class GetRequest04 {
         response.then().body("data", Matchers.hasSize(24)
                         ,"data.employee_name",Matchers.hasItem("Ashton Cox")
                         ,"data.employee_age",Matchers.hasItems(21,61,23));
-
     }
 }
