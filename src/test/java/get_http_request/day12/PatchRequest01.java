@@ -42,7 +42,7 @@ Dönen response un status kodunun 200 ve body kısmının aşağıdaki gibi oldu
         //Request response
         Response response=given()
                 .contentType(ContentType.JSON)
-                 .spec(spec04)
+                .spec(spec04)
                 .body(requestData.toString())
                 .when()
                 .patch("/{1}/{2}");
