@@ -5,7 +5,7 @@ public class BookingPojo {
     private String lastname="Can";
     private int totalprice=500;
     private boolean depositpaid=true;
-    private BookingsDatesPojo bookingsDates;
+    private BookingsDatesPojo bookingdates;
 
     public BookingPojo() {
     }
@@ -15,7 +15,7 @@ public class BookingPojo {
         this.lastname = lastname;
         this.totalprice = totalprice;
         this.depositpaid = depositpaid;
-        this.bookingsDates = bookingsDatesPojo;
+        this.bookingdates = bookingsDatesPojo;
     }
 
     public String getFirstname() {
@@ -50,12 +50,12 @@ public class BookingPojo {
         this.depositpaid = depositpaid;
     }
 
-    public BookingsDatesPojo getBookingsDates() {
-        return bookingsDates;
+    public BookingsDatesPojo getBookingdates() {
+        return bookingdates;
     }
 
-    public void setBookingsDates(BookingsDatesPojo bookingsDates) {
-        this.bookingsDates = bookingsDates;
+    public void setBookingdates(BookingsDatesPojo bookingdates) {
+        this.bookingdates = bookingdates;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class BookingPojo {
                 ", lastname='" + lastname + '\'' +
                 ", totalprice=" + totalprice +
                 ", depositpaid=" + depositpaid +
-                ", bookingsDatesPojo=" + bookingsDates +
+                ", bookingsDatesPojo=" + bookingdates +
                 '}';
     }
 }

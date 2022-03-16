@@ -26,20 +26,20 @@ public class PostRequestPojo02 extends HerOkuAppBaseUrl {
  }}
 Status code is 200
  response body
- {
-    "bookingid": 11,
-       "booking": {
-         "firstname": "Ali",
-         "lastname": "Can",
-         "totalprice": 500,
-         "depositpaid": true,
-         "bookingdates": {
-            "checkin": "2022-03-01",
-            "checkout": "2022-03-11"
-                             }
-                         }
-                     }
-  */
+  {
+ "bookingid": 11,
+        "booking": {
+                "firstname": "Ali",
+                "lastname": "Can",
+                "totalprice": 500,
+                "depositpaid": true,
+                "bookingdates": {
+                                "checkin": "2022-03-01",
+                                "checkout": "2022-03-11"
+                          }
+                      }
+                  }
+ */
     @Test
     public void test(){
         //1 url olustur
@@ -65,8 +65,8 @@ Status code is 200
        assertEquals(bookingPojo.getLastname(),actualData.getBooking().getLastname());
        assertEquals(bookingPojo.getTotalprice(),actualData.getBooking().getTotalprice());
        assertEquals(bookingPojo.isDepositpaid(),actualData.getBooking().isDepositpaid());
-       assertEquals(bookingPojo.getBookingsDates().getCheckin(),actualData.getBooking().getBookingsDates().getCheckin());
-       assertEquals(bookingPojo.getBookingsDates().getCheckout(),actualData.getBooking().getBookingsDates().getCheckout());
+       assertEquals(bookingPojo.getBookingdates().getCheckin(),actualData.getBooking().getBookingdates().getCheckin());
+       assertEquals(bookingPojo.getBookingdates().getCheckout(),actualData.getBooking().getBookingdates().getCheckout());
 
     }
 }
