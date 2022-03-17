@@ -1,25 +1,28 @@
 package get_http_request.day15;
 
 public class User {
-    private int id;
-    private String name;
-    private String states;
     /*
-    "country": {
-    "id": 3,
-    "name": "USA",
-    "states": null
-}
-     */
-
-    public User() {
-    }
-
-    public User(int id, String name, String states) {
-        this.id = id;
-        this.name = name;
-        this.states = states;
-    }
+           "user": {
+                   "id": 110016,
+                   "login": "leopoldo.reinger",
+                   "firstName": "Jasmine",
+                   "lastName": "Stehr",
+                   "email": "marni.zboncak@yahoo.com",
+                   "activated": true,
+                   "langKey": "en",
+                   "imageUrl": null,
+                   "resetDate": null
+       }
+        */
+    private int id;
+    private String login;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private boolean activated;
+    private String langKey;
+    private String imageUrl;
+    private String resetDate;
 
     public int getId() {
         return id;
@@ -29,28 +32,97 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLogin() {
+        return login;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getStates() {
-        return states;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setStates(String states) {
-        this.states = states;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
+    }
+
+    public String getLangKey() {
+        return langKey;
+    }
+
+    public void setLangKey(String langKey) {
+        this.langKey = langKey;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getResetDate() {
+        return resetDate;
+    }
+
+    public void setResetDate(String resetDate) {
+        this.resetDate = resetDate;
+    }
+
+    public User() {
+    }
+
+    public User(int id, String login, String firstName, String lastName, String email, boolean activated, String langKey, String imageUrl, String resetDate) {
+        this.id = id;
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.activated = activated;
+        this.langKey = langKey;
+        this.imageUrl = imageUrl;
+        this.resetDate = resetDate;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", states='" + states + '\'' +
+                ", login='" + login + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", activated=" + activated +
+                ", langKey='" + langKey + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", resetDate='" + resetDate + '\'' +
                 '}';
     }
 }

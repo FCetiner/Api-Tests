@@ -9,8 +9,8 @@ import static io.restassured.RestAssured.given;
 
 public class Authentication {
     public static void main(String[] args) {
-        String guncelToken=generateToken();
-        System.out.println(guncelToken);
+    //    String guncelToken=generateToken();
+    //    System.out.println(guncelToken);
     }
 
     public static String generateToken(){

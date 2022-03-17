@@ -12,6 +12,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 
 public class GetRequestObjectMapper02 extends HerOkuAppBaseUrl {
+
     //https://restful-booker.herokuapp.com/booking/2 url’ine bir get request gönderildiğinde,
     // status kodun 200 ve response body’nin
     //{
@@ -26,7 +27,6 @@ public class GetRequestObjectMapper02 extends HerOkuAppBaseUrl {
     //“additionalneeds”: “Breakfast”
     //}
     //Olduğunu Object Mapper kullanarak test edin
-
     @Test
     public void test(){
         //url olustur
@@ -57,6 +57,7 @@ public class GetRequestObjectMapper02 extends HerOkuAppBaseUrl {
         HashMap<String,Object>actualData=JsonUtil.convertJsonToJava(response.asString(),HashMap.class);
         System.out.println("actualData = " + actualData);
 
+        response.then().assertThat().statusCode(200);
         Assert.assertEquals(expectedData.get("firstname"),actualData.get("firstname"));
         Assert.assertEquals(expectedData.get("lastname"),actualData.get("lastname"));
         Assert.assertEquals(expectedData.get("totalprice"),actualData.get("totalprice"));
